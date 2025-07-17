@@ -12,7 +12,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="text-2xl font-bold text-primary">
-              Bling<span className="text-blue-500">.</span>
+              iBRsistemas<span className="text-blue-500">.</span>
             </div>
           </div>
 

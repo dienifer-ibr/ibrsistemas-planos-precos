@@ -4,19 +4,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import PricingCard from "@/components/PricingCard";
 import FeatureSection from "@/components/FeatureSection";
-import { 
-  ShoppingCart, 
-  Package, 
-  Truck, 
-  DollarSign, 
-  CreditCard, 
+import {
+  ShoppingCart,
+  Package,
+  Truck,
+  DollarSign,
+  CreditCard,
   Wallet,
   BarChart3,
   Users,
   Store,
   Zap,
   CheckCircle,
-  Star
+  Star,
+  Settings,
+  FileBarChart,
+  Barcode
 } from "lucide-react";
 
 const Index = () => {
@@ -24,9 +27,9 @@ const Index = () => {
 
   const pricingPlans = [
     {
-      name: "Cobalto",
+      name: "Free",
       description: "Para quem precisa controlar a operação de vendas de um jeito descomplicado",
-      price: "R$55",
+      price: "R$0",
       period: "mês",
       buttonText: "Comece grátis",
       buttonVariant: "blue-outline" as const,
@@ -42,7 +45,7 @@ const Index = () => {
       ]
     },
     {
-      name: "Mercúrio", 
+      name: "Bronze",
       description: "Para quem quer fazer a gestão completa do negócio em uma única plataforma",
       price: "R$110",
       period: "mês",
@@ -61,15 +64,15 @@ const Index = () => {
       ]
     },
     {
-      name: "Titânio",
+      name: "Prata",
       description: "Para quem busca otimizar os processos da empresa com automações e dashboards",
-      price: "R$185",
+      price: "R$249",
       period: "mês",
       buttonText: "Comece grátis",
       buttonVariant: "gradient" as const,
       features: {
         users: "15 usuários",
-        storage: "360 MB de dados", 
+        storage: "360 MB de dados",
         files: "9 GB de arquivos",
         imports: "2 mil importações de pedidos em marketplaces por mês"
       },
@@ -80,7 +83,7 @@ const Index = () => {
       isPopular: true
     },
     {
-      name: "Platina",
+      name: "Ouro",
       description: "Para quem quer crescer o negócio com recursos para uma alta performance",
       price: "R$450",
       period: "mês",
@@ -102,7 +105,7 @@ const Index = () => {
       name: "Diamante",
       description: "Para quem quer contar com um sistema robusto e alcançar resultados limitados",
       price: "R$650",
-      period: "mês", 
+      period: "mês",
       buttonText: "Fale com especialista",
       buttonVariant: "blue-outline" as const,
       features: {
@@ -122,11 +125,11 @@ const Index = () => {
     {
       icon: ShoppingCart,
       title: "Vendas",
-      description: "Gerencie pedidos e notas fiscais"
+      description: "Gerencie pedidos e documentos fiscais"
     },
     {
       icon: Package,
-      title: "Estoque", 
+      title: "Estoque",
       description: "Controle produtos e fornecedores"
     },
     {
@@ -137,17 +140,32 @@ const Index = () => {
     {
       icon: DollarSign,
       title: "Gestão financeira",
-      description: "Controle contas e acesse serviços"
+      description: "Controle contas a receber e contas a pagar"
     },
     {
       icon: CreditCard,
       title: "Meios de pagamento",
-      description: "Links, boletos, PIX, POS e mais"
+      description: "Conheça o iBR Tef"
     },
     {
-      icon: Wallet,
-      title: "Bling Conta Digital",
-      description: "Integre conta digital PJ gratuita"
+      icon: Barcode,
+      title: "Boleto Bancário",
+      description: "Gere boletos diretamente pelo sistema"
+    },
+    {
+      icon: FileBarChart,
+      title: "Análises",
+      description: "Relatórios personalizáveis"
+    },
+    {
+      icon: Users,
+      title: "CRM",
+      description: "Gestão de relacionamento com seu cliente"
+    },
+    {
+      icon: Settings,
+      title: "Gestão de Serviços",
+      description: "Gerencie ordens de serviço e ordens de produção"
     }
   ];
 
@@ -172,17 +190,17 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="py-20 bg-gradient-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            O <span className="text-primary">plano ideal</span> para o seu negócio, tem no Bling!
+            O <span className="text-primary">plano ideal</span> para o seu negócio, você encontra aqui na iBRsistemas!
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Comece grátis e sem inserir dados de pagamento.
           </p>
-          
+
           {/* Billing Period Toggle */}
           <div className="flex items-center justify-center space-x-4 mb-12">
             <span className={`text-sm ${billingPeriod === 'monthly' ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
@@ -190,14 +208,12 @@ const Index = () => {
             </span>
             <button
               onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'annual' : 'monthly')}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-                billingPeriod === 'annual' ? 'bg-primary' : 'bg-muted'
-              }`}
+              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${billingPeriod === 'annual' ? 'bg-primary' : 'bg-muted'
+                }`}
             >
               <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  billingPeriod === 'annual' ? 'translate-x-6' : 'translate-x-1'
-                }`}
+                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${billingPeriod === 'annual' ? 'translate-x-6' : 'translate-x-1'
+                  }`}
               />
             </button>
             <span className={`text-sm ${billingPeriod === 'annual' ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
@@ -245,8 +261,8 @@ const Index = () => {
 
       {/* ERP Features */}
       <FeatureSection
-        title="ERP"
-        subtitle="Gestão Operacional e Finanças"
+        title="iBRsistemas ERP"
+        subtitle="Completo, Ágil e Fácil."
         features={erpFeatures}
       />
 
@@ -260,7 +276,7 @@ const Index = () => {
                 <span>Novo</span>
               </div>
               <h2 className="text-3xl font-bold mb-4">
-                Conheça o Meu Negócio!
+                Conheça o Seu Negócio!
               </h2>
               <p className="text-lg mb-6 text-blue-100">
                 Dashboards inteligentes para análise do negócio e ajuda nas tomadas de decisão
@@ -269,9 +285,18 @@ const Index = () => {
                 Saiba mais
               </Button>
             </div>
-            <div className="relative">
+            {/* <div className="relative">
               <div className="bg-blue-600/20 rounded-lg p-8 backdrop-blur">
                 <BarChart3 className="w-24 h-24 text-blue-200 mx-auto" />
+              </div>
+            </div> remover */}
+            <div className="relative">
+              <div className="bg-blue-600/20 rounded-lg p-8 backdrop-blur">
+                <img
+                  src='/images/teste.png'
+                  alt="Dashboard iBR"
+                  className="w-24 h-24 mx-auto object-contain"
+                />
               </div>
             </div>
           </div>
@@ -292,10 +317,14 @@ const Index = () => {
             Pronto para começar?
           </h2>
           <p className="text-lg text-blue-100 mb-8">
-            Teste grátis por 30 dias, sem compromisso e sem cartão de crédito.
+            Teste e utilize de forma gratuita.
           </p>
           <Button variant="secondary" size="lg" className="text-lg px-8">
-            Comece agora grátis
+            <a
+              href="https://erp.ibrsistemas.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Comece agora grátis</a>
           </Button>
         </div>
       </section>
