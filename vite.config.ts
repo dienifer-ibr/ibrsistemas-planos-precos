@@ -1,7 +1,10 @@
-import { viteStaticCopy } from 'vite-plugin-static-copy';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import path from "path";
+import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  base: "/iBRsistemas-precos",
+  base: "/iBRsistemas-precos/", 
   server: {
     host: "::",
     port: 8080,
@@ -9,15 +12,6 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    viteStaticCopy({
-      targets: [
-        {
-          src: 'dist/index.html',
-          dest: '.', // cria 404.html na raiz
-          rename: '404.html'
-        }
-      ]
-    })
   ].filter(Boolean),
   resolve: {
     alias: {
