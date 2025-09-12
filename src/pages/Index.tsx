@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import PricingCard from "@/components/PricingCard";
 import FeatureSection from "@/components/FeatureSection";
+import { Footer } from "@/components/Footer";
+
 import {
   ShoppingCart,
   Package,
@@ -21,13 +23,14 @@ import {
   FileBarChart,
   Barcode
 } from "lucide-react";
+import { FAQ } from "@/components/FAQ";
 
 const Index = () => {
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annual">("monthly");
 
   const pricingPlans = [
     {
-      name: "Free",
+      name: "Grátis",
       description: "Para quem precisa controlar a operação de vendas de um jeito descomplicado",
       price: "R$0",
       period: "mês",
@@ -45,11 +48,11 @@ const Index = () => {
       ]
     },
     {
-      name: "Bronze",
+      name: "Light",
       description: "Para quem quer fazer a gestão completa do negócio em uma única plataforma",
-      price: "R$110",
+      price: "R$59,90",
       period: "mês",
-      buttonText: "Comece grátis",
+      buttonText: "Fale com especialista",
       buttonVariant: "blue-outline" as const,
       features: {
         users: "10 usuários",
@@ -64,12 +67,12 @@ const Index = () => {
       ]
     },
     {
-      name: "Prata",
+      name: "Bronze",
       description: "Para quem busca otimizar os processos da empresa com automações e dashboards",
-      price: "R$249",
+      price: "R$119,90",
       period: "mês",
-      buttonText: "Comece grátis",
-      buttonVariant: "gradient" as const,
+      buttonText: "Fale com especialista",
+      buttonVariant: "blue-outline" as const,
       features: {
         users: "15 usuários",
         storage: "360 MB de dados",
@@ -80,12 +83,11 @@ const Index = () => {
         "Tudo do Plano Mercúrio",
         "Impressão automática da etiqueta logística"
       ],
-      isPopular: true
     },
     {
-      name: "Ouro",
+      name: "Prata",
       description: "Para quem quer crescer o negócio com recursos para uma alta performance",
-      price: "R$450",
+      price: "R$189,90",
       period: "mês",
       buttonText: "Fale com especialista",
       buttonVariant: "blue-outline" as const,
@@ -102,9 +104,46 @@ const Index = () => {
       ]
     },
     {
+      name: "Ouro",
+      description: "Para quem quer contar com um sistema robusto e alcançar resultados limitados",
+      price: "R$249,90",
+      period: "mês",
+      buttonText: "Fale com especialista",
+      buttonVariant: "gradient" as const,
+      features: {
+        users: "80 usuários",
+        storage: "1.8 GB de dados",
+        files: "45 GB de arquivos",
+        imports: "Importações ilimitadas de pedidos em marketplaces"
+      },
+      allFeatures: [
+        "Tudo do Plano Platina",
+        "Dashboards Meu Negócio com dados de vendas em até"
+      ],
+      isPopular: true
+    },
+    {
       name: "Diamante",
       description: "Para quem quer contar com um sistema robusto e alcançar resultados limitados",
-      price: "R$650",
+      price: "R$449,90",
+      period: "mês",
+      buttonText: "Fale com especialista",
+      buttonVariant: "blue-outline" as const,
+      features: {
+        users: "80 usuários",
+        storage: "1.8 GB de dados",
+        files: "45 GB de arquivos",
+        imports: "Importações ilimitadas de pedidos em marketplaces"
+      },
+      allFeatures: [
+        "Tudo do Plano Platina",
+        "Dashboards Meu Negócio com dados de vendas em até"
+      ]
+    },
+    {
+      name: "Personalizado",
+      description: "Para quem quer contar com um sistema robusto e alcançar resultados limitados",
+      price: "R$-",
       period: "mês",
       buttonText: "Fale com especialista",
       buttonVariant: "blue-outline" as const,
@@ -223,7 +262,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Banner */}
       <section className="py-12 bg-gradient-blue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-center text-white mb-8">
@@ -246,10 +284,9 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-6">
             {pricingPlans.map((plan, index) => (
               <div key={plan.name} className="animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                 <PricingCard {...plan} />
@@ -259,14 +296,12 @@ const Index = () => {
         </div>
       </section>
 
-      {/* ERP Features */}
       <FeatureSection
         title="iBRsistemas ERP"
         subtitle="Completo, Ágil e Fácil."
         features={erpFeatures}
       />
 
-      {/* Meu Negócio Banner */}
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -285,17 +320,12 @@ const Index = () => {
                 Saiba mais
               </Button>
             </div>
-            {/* <div className="relative">
-              <div className="bg-blue-600/20 rounded-lg p-8 backdrop-blur">
-                <BarChart3 className="w-24 h-24 text-blue-200 mx-auto" />
-              </div>
-            </div> remover */}
             <div className="relative">
               <div className="bg-blue-600/20 rounded-lg p-8 backdrop-blur">
                 <img
-                  src='/images/teste.png'
+                  src='/images/dashboard.png'
                   alt="Dashboard iBR"
-                  className="w-24 h-24 mx-auto object-contain"
+                  className="w-96 h-100 mx-auto object-contain"
                 />
               </div>
             </div>
@@ -310,24 +340,8 @@ const Index = () => {
         features={hubFeatures}
       />
 
-      {/* Footer CTA */}
-      <section className="py-20 bg-gradient-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Pronto para começar?
-          </h2>
-          <p className="text-lg text-blue-100 mb-8">
-            Teste e utilize de forma gratuita.
-          </p>
-          <Button variant="secondary" size="lg" className="text-lg px-8">
-            <a
-              href="https://erp.ibrsistemas.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Comece agora grátis</a>
-          </Button>
-        </div>
-      </section>
+      <FAQ />
+      <Footer />
     </div>
   );
 };
