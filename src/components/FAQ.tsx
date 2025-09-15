@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { SiWhatsapp } from "react-icons/si";
 
 export const FAQ = () => {
     const [openQuestion, setOpenQuestion] = useState<number | null>(null);
@@ -8,36 +10,24 @@ export const FAQ = () => {
     const questions = [
         {
             question: "Posso testar o iBRsistemas ERP gratuitamente?",
-            answer: "Sim! Você pode testar os recursos do iBRsistemas ERP por tempo indeterminado, sem inserir dados de cartão de crédito."
+            answer: "Sim! Você pode testar os recursos do iBRsistemas ERP por tempo indeterminado, sem inserir dados de pagamento."
         },
         {
             question: "Como funciona a migração de dados?",
-            answer: "Nossa equipe especializada te auxilia na migração completa dos seus dados. O processo é gratuito e não há risco de perda de informações."
+            answer: "Para migração de dados é necessária a avaliação da nossa equipe especializada, sendo isenta de custo a migração inicial."
         },
         {
-            question: "O Bling funciona offline?",
-            answer: "O Bling é uma plataforma online, mas você pode acessar relatórios e dados mesmo quando estiver offline através do nosso app mobile."
+            question: "Terei que pagar pelas atualizações do iBRsistemas ERP?",
+            answer: "Não. Você contrata e paga mensalmente apenas o valor correspondente ao plano que utiliza e as atualizações são entregues periodicamente e não há custos adicionais."
         },
         {
-            question: "Posso integrar com meu e-commerce atual?",
-            answer: "Sim! O Bling se integra com mais de 70 plataformas de e-commerce, marketplaces e sistemas de pagamento."
+            question: "Onde os dados da minha empresa ficarão armazenados?",
+            answer: "O iBRsistemas é hospedado em um dos melhores e mais seguro Data Center do mundo na Amazon (AWS) em São Paulo e também em servidores próprios em nosso Data Center no Rio Grande do Sul, onde o banco de dados está em Cluster e os backups automáticos são frequentes e diários."
         },
         {
-            question: "Como funciona o suporte técnico?",
-            answer: "Oferecemos suporte via chat, email e telefone. Nossos especialistas estão disponíveis para ajudar você a usar melhor a plataforma."
+            question: "Tenho várias empresas, matriz e filiais, posso utilizar o iBRsistemas ERP para controlar todas as empresas de forma integrada?",
+            answer: "Sim. Com o iBRsistemas ERP você pode cadastrar várias empresas e compartilhar informações entre elas como: Produtos, Clientes, Fornecedores, etc.. Ter a gestão de todas as empresas em uma única plataforma, porém com a gerencia de acesso individual, cada uma com seus usuários e permissões."
         },
-        {
-            question: "Posso mudar de plano a qualquer momento?",
-            answer: "Sim! Você pode fazer upgrade ou downgrade do seu plano a qualquer momento, e o valor é ajustado proporcionalmente."
-        },
-        {
-            question: "Os dados ficam seguros no Bling?",
-            answer: "Sim! Temos certificação ISO 27001 e utilizamos criptografia de ponta para garantir a máxima segurança dos seus dados."
-        },
-        {
-            question: "Como funciona a emissão de notas fiscais?",
-            answer: "A emissão é automática e integrada com a Receita Federal. Você pode emitir NFe, NFCe e NFSe diretamente pela plataforma."
-        }
     ];
 
     const toggleQuestion = (index: number) => {
@@ -78,6 +68,20 @@ export const FAQ = () => {
                         </Card>
                     ))}
                 </div>
+
+                <button
+                    onClick={() =>
+                        window.open(
+                            "https://api.whatsapp.com/send/?phone=555197790473&text=Olá, gostaria de tirar algumas dúvidas.",
+                            "_blank"
+                        )
+                    }
+                    className="inline-flex items-center space-x-2 px-6 py-2 text-sm border border-white rounded-md text-white bg-transparent hover:bg-white/10 transition"
+                    type="button"
+                >
+                    <SiWhatsapp className="w-5 h-5" />
+                    <span>Outras dúvidas!</span>
+                </button>
             </div>
         </section>
     );
