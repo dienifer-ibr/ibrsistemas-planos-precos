@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import PricingCard from "@/components/PricingCard";
 import FeatureSection from "@/components/FeatureSection";
 import { Footer } from "@/components/Footer";
+import PlanComparison from "@/components/PlanComparison";
+import Depoimentos from "@/components/Depoimentos";
 
 import {
   ShoppingCart,
@@ -228,7 +230,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
+      {/* <Header /> */}
 
       {/* Hero Section */}
       <section className="py-20 bg-gradient-accent">
@@ -239,26 +241,6 @@ const Index = () => {
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             Comece grátis e sem inserir dados de pagamento.
           </p>
-
-          {/* Billing Period Toggle */}
-          <div className="flex items-center justify-center space-x-4 mb-12">
-            <span className={`text-sm ${billingPeriod === 'monthly' ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
-              Mensal
-            </span>
-            <button
-              onClick={() => setBillingPeriod(billingPeriod === 'monthly' ? 'annual' : 'monthly')}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${billingPeriod === 'annual' ? 'bg-primary' : 'bg-muted'
-                }`}
-            >
-              <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${billingPeriod === 'annual' ? 'translate-x-6' : 'translate-x-1'
-                  }`}
-              />
-            </button>
-            <span className={`text-sm ${billingPeriod === 'annual' ? 'text-primary font-medium' : 'text-muted-foreground'}`}>
-              Anual <span className="text-xs text-primary">(economize até R$1.300)</span>
-            </span>
-          </div>
         </div>
       </section>
 
@@ -295,6 +277,12 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <div className="min-h-screen bg-background py-12">
+        <div className="container mx-auto">
+          <PlanComparison />
+        </div>
+      </div>
 
       <FeatureSection
         title="iBRsistemas ERP"
@@ -340,6 +328,7 @@ const Index = () => {
         features={hubFeatures}
       />
 
+      <Depoimentos />
       <FAQ />
       <Footer />
     </div>

@@ -17,7 +17,7 @@ export const Footer = () => {
         },
         {
             title: "Empresa",
-            links: ["Sobre o Bling", "Carreiras", "Imprensa", "Parceiros", "Afiliados", "Contato"]
+            links: ["Sobre o iBRsistemas", "Carreiras", "Imprensa", "Parceiros", "Afiliados", "Contato"]
         }
     ];
 
@@ -34,10 +34,9 @@ export const Footer = () => {
             <div className="container mx-auto px-4 py-16">
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
                     <div className="lg:col-span-1">
-                        <div className="text-2xl font-bold mb-4">bling</div>
+                        <div className="text-2xl font-bold mb-4">iBRsistemas</div>
                         <p className="text-sm mb-6 leading-relaxed">
-                            O ERP mais completo e fácil de usar do Brasil. Gerencie seu negócio de forma inteligente.
-                        </p>
+                            Há mais de 25 anos levando soluções em Software de gestão para pequenas e médias empresas, com milhares de usuários ativos no Brasil inteiro.                        </p>
                         <div className="flex space-x-4">
                             {socialIcons.map((social, index) => (
                                 <a
@@ -73,7 +72,7 @@ export const Footer = () => {
                 <div className="border-t border-white/20 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <div className="text-sm text-white/70 mb-4 md:mb-0">
-                            © 2024 Bling. Todos os direitos reservados.
+                            © 2025 iBRsistemas. Todos os direitos reservados.
                         </div>
                         <div className="flex space-x-6 text-sm">
                             <a href="#" className="text-white/70 hover:text-white transition-colors">Política de Privacidade</a>

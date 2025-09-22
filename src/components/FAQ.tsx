@@ -38,7 +38,7 @@ export const FAQ = () => {
         <section className="py-16 px-4 bg-secondary/20">
             <div className="container mx-auto max-w-4xl">
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold mb-4">
+                    <h2 className="text-3xl font-bold mb-4 text-blue-600">
                         Perguntas frequentes
                     </h2>
                     <p className="text-xl text-text-gray">
