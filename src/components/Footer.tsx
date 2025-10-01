@@ -51,7 +51,7 @@ export const Footer = () => {
 
     return (
         <footer className="bg-blue-500 text-white">
-            <div className="container mx-auto px-4 py-16">
+            <div id="footer" className="container mx-auto px-4 py-16">
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
                     {/* Logo + Redes sociais */}
                     <div className="lg:col-span-1">
