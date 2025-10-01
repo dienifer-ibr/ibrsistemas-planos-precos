@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 import { SiTiktok } from "react-icons/si";
-import '..//App.css';
+import '../Footer.css';
 
 export const Footer = () => {
     const footerSections = [

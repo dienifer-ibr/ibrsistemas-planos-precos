@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+
+    /* Centraliza todas as colunas do grid */
+    #footer .grid>div {
+        text-align: center;
+    }
+
+    /* Centraliza a logo */
+    #footer .grid>div img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Centraliza o parágrafo da logo */
+    #footer .grid>div p {
+        text-align: center;
+    }
+
+    /* Centraliza os ícones sociais */
+    #footer .grid>div .flex {
+        justify-content: center;
+    }
+
+    /* Centraliza listas de links */
+    #footer ul {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    /* Centraliza títulos das seções */
+    #footer h3 {
+        text-align: center;
+    }
+
+    /* Centraliza o rodapé inferior */
+    #footer>.border-t {
+        text-align: center;
+    }
+}
