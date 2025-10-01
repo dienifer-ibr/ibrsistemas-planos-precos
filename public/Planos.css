@@ -557,7 +557,7 @@ body {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #toggleButton {
         background-color: #fff;
         color: #2563EB;
@@ -688,10 +688,10 @@ body {
         max-width: 200px;
         font-size: 0.875rem;
     }
-}
+} */
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     #toggleButton {
         background-color: #fff;
         color: #2563EB;
@@ -705,7 +705,7 @@ body {
         align-items: center;
         justify-content: center;
         border: 2px solid #2563EB;
-        padding: 0 20px;
+        padding: 0;
         box-sizing: border-box;
     }
 
