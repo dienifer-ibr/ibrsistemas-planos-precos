@@ -691,7 +691,7 @@ body {
 }
 
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     #toggleButton {
         background-color: #fff;
         color: #2563EB;
@@ -769,7 +769,7 @@ body {
     .features-table {
         min-width: 600px;
     }
-}
+} */
 
 #toggleButton {
     background-color: #fff;
