@@ -1,47 +1,71 @@
-import { Card } from "@/components/ui/card";
-import { Facebook, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { SiTiktok } from "react-icons/si";
 
 export const Footer = () => {
     const footerSections = [
         {
             title: "Plataforma",
-            links: ["ERP", "Vendas", "Estoque", "Financeiro", "Relatórios", "Integrações"]
+            links: [
+                { label: "iBRsistemas ERP", href: "http://erp.ibrsistemas.com.br/#/login" },
+                { label: "iPDV", href: "https://youtu.be/_YBG6VDZlHs?si=D9Tdy_78g_mLjniN" },
+                { label: "Minhas Vendas App", href: "https://www.ibrsistemas.com.br/minhasvendas/" },
+                // { label: "E-commerce", href: "/" }
+            ]
         },
         {
-            title: "Soluções",
-            links: ["E-commerce", "Marketplace", "Varejo", "Atacado", "Prestadores de Serviço", "Indústria"]
+            title: "Serviços",
+            links: [
+                { label: "Implantação", href: "https://api.whatsapp.com/send?phone=5551980293556&text=Olá, gostaria de mais informações sobre implantação do sistema!" },
+                { label: "Curso de Treinamentos", href: "https://ibrsistemas.com.br/treinamentos/erp/" },
+                { label: "Suporte", href: "https://ibrsistemas.com.br/treinamentos/erp/" },
+                { label: "Treinamentos Interativos", href: "https://api.whatsapp.com/send?phone=5551980293556&text=Olá, gostaria de mais informações sobre funcionamento dos treinamentos interativos!" }
+            ]
         },
         {
-            title: "Recursos",
-            links: ["Blog", "Central de Ajuda", "Webinars", "Ebooks", "Ferramentas Gratuitas", "Status da Plataforma"]
+            title: "Integrações",
+            links: [
+                { label: "iBR Tef", href: "https://api.whatsapp.com/send?phone=5551980293556&text=Olá, gostaria de mais informações sobre o iBR Tef!" },
+                { label: "Boletos", href: "https://api.whatsapp.com/send?phone=5551980293556&text=Olá, gostaria de mais informações sobre Emissões de Boletos pelo sistema!" },
+                { label: "WhatsApp", href: "https://api.whatsapp.com/send?phone=5551980293556&text=Olá, gostaria de mais informações sobre a Integração do WhatsApp com o sistema!" },
+                { label: "E-commerce", href: "https://api.whatsapp.com/send?phone=5551980293556&text=Olá, gostaria de mais informações sobre E-commerce!" }
+            ]
         },
         {
             title: "Empresa",
-            links: ["Sobre o iBRsistemas", "Carreiras", "Imprensa", "Parceiros", "Afiliados", "Contato"]
+            links: [
+                { label: "Contato", href: "https://api.whatsapp.com/send?phone=5551980293556&text=Olá, gostaria de mais informações sobre o iBRsistemas ERP!" },
+                { label: "Planos e Preços", href: "#planos-precos" },
+                { label: "Sobre a iBRsistemas", href: "https://euquero.ibrsistemas.com.br/" },
+                { label: "Dúvidas Frequentes", href: "#faq" }
+            ]
         }
     ];
 
     const socialIcons = [
-        { icon: <Facebook className="h-5 w-5" />, href: "#" },
-        { icon: <Instagram className="h-5 w-5" />, href: "#" },
-        { icon: <Linkedin className="h-5 w-5" />, href: "#" },
-        { icon: <Youtube className="h-5 w-5" />, href: "#" },
-        { icon: <Twitter className="h-5 w-5" />, href: "#" }
+        { icon: <Facebook className="h-5 w-5" />, href: "https://www.facebook.com/IBRsistemas" },
+        { icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/ibrsistemas/" },
+        { icon: <Linkedin className="h-5 w-5" />, href: "https://br.linkedin.com/company/ibrsistemas-sistema-completo-gil-e-f-cil-" },
+        { icon: <Youtube className="h-5 w-5" />, href: "https://www.youtube.com/@ibrsistemassoftwareerp1717" },
+        { icon: <SiTiktok className="h-5 w-5" />, href: "http://tiktok.com/@ibrsistemas" }
     ];
 
     return (
         <footer className="bg-blue-500 text-white">
             <div className="container mx-auto px-4 py-16">
                 <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                    {/* Logo + Redes sociais */}
                     <div className="lg:col-span-1">
-                        <div className="text-2xl font-bold mb-4">iBRsistemas</div>
-                        <p className="text-sm mb-6 leading-relaxed">
-                            Há mais de 25 anos levando soluções em Software de gestão para pequenas e médias empresas, com milhares de usuários ativos no Brasil inteiro.                        </p>
+                        <img src="/images/logo.png" alt="logo" className="w-[75%] mb-4" />
+                        <p className="text-base mb-6 leading-relaxed">
+                            ERP Completo, Ágil e Fácil.
+                        </p>
                         <div className="flex space-x-4">
                             {socialIcons.map((social, index) => (
                                 <a
                                     key={index}
                                     href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-white/70 hover:text-white transition-colors"
                                 >
                                     {social.icon}
@@ -50,6 +74,7 @@ export const Footer = () => {
                         </div>
                     </div>
 
+                    {/* Seções */}
                     {footerSections.map((section, index) => (
                         <div key={index}>
                             <h3 className="font-semibold mb-4">{section.title}</h3>
@@ -57,10 +82,10 @@ export const Footer = () => {
                                 {section.links.map((link, linkIndex) => (
                                     <li key={linkIndex}>
                                         <a
-                                            href="#"
+                                            href={link.href}
                                             className="text-sm text-white/70 hover:text-white transition-colors"
                                         >
-                                            {link}
+                                            {link.label}
                                         </a>
                                     </li>
                                 ))}
@@ -69,19 +94,14 @@ export const Footer = () => {
                     ))}
                 </div>
 
+                {/* Rodapé inferior */}
                 <div className="border-t border-white/20 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center">
-                        <div className="text-sm text-white/70 mb-4 md:mb-0">
+                    <div className="flex justify-center items-center">
+                        <div className="text-sm text-white/70 text-center">
                             © 2025 iBRsistemas. Todos os direitos reservados.
-                        </div>
-                        <div className="flex space-x-6 text-sm">
-                            <a href="#" className="text-white/70 hover:text-white transition-colors">Política de Privacidade</a>
-                            <a href="#" className="text-white/70 hover:text-white transition-colors">Termos de Uso</a>
-                            <a href="#" className="text-white/70 hover:text-white transition-colors">LGPD</a>
                         </div>
                     </div>
                 </div>
-
             </div>
         </footer>
     );

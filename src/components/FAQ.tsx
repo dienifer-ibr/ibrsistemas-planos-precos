@@ -35,7 +35,7 @@ export const FAQ = () => {
     };
 
     return (
-        <section className="py-16 px-4 bg-secondary/20">
+        <section className="py-16 px-4 bg-secondary/20" id="faq">
             <div className="container mx-auto max-w-4xl">
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold mb-4 text-blue-600">
@@ -69,19 +69,21 @@ export const FAQ = () => {
                     ))}
                 </div>
 
-                <button
-                    onClick={() =>
-                        window.open(
-                            "https://api.whatsapp.com/send/?phone=555197790473&text=Olá, gostaria de tirar algumas dúvidas.",
-                            "_blank"
-                        )
-                    }
-                    className="inline-flex items-center space-x-2 px-6 py-2 text-sm border border-white rounded-md text-white bg-transparent hover:bg-white/10 transition"
-                    type="button"
-                >
-                    <SiWhatsapp className="w-5 h-5" />
-                    <span>Outras dúvidas!</span>
-                </button>
+                <div className="flex justify-center mt-8">
+                    <button
+                        onClick={() =>
+                            window.open(
+                                "https://api.whatsapp.com/send/?phone=555197790473&text=Olá, gostaria de tirar algumas dúvidas.",
+                                "_blank"
+                            )
+                        }
+                        className="inline-flex items-center space-x-2 px-12 py-2 text-sm border border-white rounded-md text-white bg-blue-400 hover:bg-blue-500 transition"
+                        type="button"
+                    >
+                        <SiWhatsapp className="w-5 h-5" />
+                        <span>Outras dúvidas!</span>
+                    </button>
+                </div>
             </div>
         </section>
     );

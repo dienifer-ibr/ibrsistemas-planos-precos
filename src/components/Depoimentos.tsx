@@ -3,42 +3,42 @@ import { Star } from "lucide-react";
 
 export default function Depoimentos() {
   const stats = [
-    { number: "500.000+", label: "Empresas ativas" },
-    { number: "4.8", label: "Avaliação média", icon: <Star className="h-5 w-5 text-yellow-500 fill-current" /> },
-    { number: "98%", label: "Satisfação dos clientes" },
-    { number: "24/7", label: "Suporte disponível" }
+    { number: "400+", label: "Empresas ativas" },
+    { number: "4.7", label: "Avaliação média", icon: <Star className="h-5 w-5 text-yellow-500 fill-current" /> },
+    { number: "100%", label: "Satisfação dos clientes" },
+    { number: "7/7", label: "Suporte disponível" }
   ];
 
   const depoimentos = [
     {
-      text: "O iBRsistemas revolucionou nossa operação. Conseguimos reduzir 80% do tempo gasto com processos manuais.",
-      author: "Maria Silva",
-      company: "Loja Fashion Store",
+      text: "Solução completa pra empresa, indico muito",
+      author: "Maikel Castro",
+      company: "5 anos atrás",
       rating: 5
     },
     {
-      text: "A integração com os marketplaces é fantástica. Nunca foi tão fácil gerenciar vendas em múltiplos canais.",
-      author: "João Santos",
-      company: "Tech Solutions",
+      text: "Sistema completo, ótimo atendimento, preço excelente. Acho que não existe outro com melhor custo benefício.",
+      author: "Franciane Führ Hoelscher",
+      company: "8 anos atrás",
       rating: 5
     },
     {
-      text: "O suporte é excepcional e a plataforma é muito intuitiva. Recomendo para qualquer empreendedor.",
-      author: "Ana Costa",
-      company: "Boutique Elegance",
+      text: "Melhor sistema ERP da região",
+      author: "Raphael Leick",
+      company: "8 anos atrás",
       rating: 5
     }
   ];
 
   return (
-    <section className="py-16 px-4">
+    <section className="py-16 px-4 bg-blue-400">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-blue-600">
+          <h2 className="text-3xl font-bold mb-4 text-white">
             Ajudamos milhares de empreendedores<br />
             a simplificar seus negócios.
           </h2>
-          <p className="text-xl text-text-gray">
+          <p className="text-xl text-white/80">
             Veja o que nossos clientes dizem sobre o iBRsistemas
           </p>
         </div>
@@ -48,10 +48,10 @@ export default function Depoimentos() {
           {stats.map((stat, index) => (
             <Card key={index} className="p-6 text-center bg-secondary/30 border-0">
               <div className="flex items-center justify-center mb-2">
-                <span className="text-3xl font-bold text-primary">{stat.number}</span>
+                <span className="text-3xl font-bold text-white">{stat.number}</span>
                 {stat.icon && <div className="ml-2">{stat.icon}</div>}
               </div>
-              <p className="text-sm text-text-gray">{stat.label}</p>
+              <p className="text-sm text-white/80">{stat.label}</p>
             </Card>
           ))}
         </div>
