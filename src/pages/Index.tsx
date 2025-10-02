@@ -32,65 +32,47 @@ const Index = () => {
     {
       icon: ShoppingCart,
       title: "Vendas",
-      description: "Gerencie orpamentos, vendas e documentos fiscais"
+      description: "Gerencie orçamentos, vendas e documentos fiscais (NF-e, NFC-e, NFS-e, MDF-e e Sped)"
     },
     {
       icon: Package,
       title: "Estoque",
-      description: "Controle estoque de produtos, compras e fornecedores"
+      description: "Controle estoque(s) dos seus produtos, compras, Ordens de Compra e fornecedores."
     },
     {
       icon: Truck,
       title: "Logística",
-      description: "Separe pedidos e organize entregas"
+      description: "Realize conferências de mercadorias, organize pedidos e entregas."
     },
     {
       icon: DollarSign,
       title: "Gestão financeira",
-      description: "Controle contas a receber e contas a pagar"
+      description: "Gerencie as contas a receber e a pagar da sua empresa, mantenha seu DRE e Fluxo de Caixa sempre organizados."
     },
     {
       icon: CreditCard,
       title: "Meios de pagamento",
-      description: "Conheça o iBR Tef"
+      description: "Conheça o iBR Tef, uma solução para recebimentos eletrônicos que pode ser configurada com uma ou mais adquirentes, tendo suporte direto da nossa equipe."
     },
     {
       icon: Barcode,
       title: "Boleto Bancário",
-      description: "Gere boletos diretamente pelo sistema"
+      description: "Gere boletos bancários diretamente pelo sistema, via API e/ou por Envio de Remessa e Retorno, com diversos bancos já homologados."
     },
     {
       icon: FileBarChart,
       title: "Análises",
-      description: "Relatórios personalizáveis"
+      description: "Contamos com diversas opções de Relatórios Personalizáveis, disponíveis para exportação em Excel e PDF."
     },
     {
       icon: Users,
       title: "CRM",
-      description: "Gestão de relacionamento com seu cliente"
+      description: "Gestão completa de relacionamento com seu cliente, acompanhe indicadores de vendas e financeiros, e configure lembretes para sua organização."
     },
     {
       icon: Settings,
       title: "Gestão de Serviços / Produção",
-      description: "Gerencie ordens de serviço e ordens de produção"
-    }
-  ];
-
-  const hubFeatures = [
-    {
-      icon: Store,
-      title: "Vendas Multicanal",
-      description: "Para vender no Marketplace, Loja Virtual ou Loja Física (PDV), e integrar a gestão dos seus canais de venda"
-    },
-    {
-      icon: Zap,
-      title: "Integrações",
-      description: "Conecte sistemas e automatize processos"
-    },
-    {
-      icon: BarChart3,
-      title: "Relatórios",
-      description: "Analise dados e tome decisões estratégicas"
+      description: "Gerencie suas ordens de serviço e produção de forma prática, acompanhe cada etapa, controle prazos e garanta a entrega/produção com qualidade e no tempo certo."
     }
   ];
 
@@ -103,14 +85,16 @@ const Index = () => {
       {/* Hero Section */}
       <section className="py-20 bg-gradient-accent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-8">
-            O <span className="text-primary">plano ideal</span> para o seu negócio, você encontra aqui na iBRsistemas!
+          <h1 className="text-4xl md:text-5xl font-bold text-primary mb-8">
+            <strong>ERP 100% online</strong>
+            <h1>
+              <strong>
+                Agora também em versão grátis.
+              </strong>
+            </h1>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            ERP 100% online!
-            <p>
-              Comece grátis e sem inserir dados de pagamento.
-            </p>
+            Controle financeiro, notas e estoque sem custo inicial. <p>Cresça no seu ritmo.</p>
           </p>
         </div>
       </section>

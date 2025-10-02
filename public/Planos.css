@@ -692,6 +692,11 @@ body {
 
 
 @media (max-width: 768px) {
+    .container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
     #toggleButton {
         background-color: #fff;
         color: #2563EB;
@@ -769,6 +774,89 @@ body {
     .features-table {
         min-width: 600px;
     }
+
+    /*comparise section*/
+    .features-content {
+        display: flex;
+        flex-direction: column;
+        /* empilha tabela + sumário */
+        gap: 1rem;
+    }
+
+    /* Tabela com scroll horizontal */
+    .features-table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 8px;
+        padding: 0.5rem;
+    }
+
+    .features-table {
+        min-width: 700px;
+        /* garante que caiba em scroll */
+        font-size: 0.8rem;
+    }
+
+    .features-table td,
+    .features-table th {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .feature-name {
+        max-width: 180px;
+        /* evita quebrar demais */
+        font-size: 0.8rem;
+    }
+
+    /* Navegação passa para baixo da tabela em horizontal */
+    .features-summary {
+        position: static;
+        order: 2;
+        width: 100%;
+        margin-top: 1rem;
+        max-height: 150px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .summary-list {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .summary-link {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.75rem;
+        white-space: nowrap;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        background: #f9fafb;
+    }
+
+    .summary-link.active {
+        background: #2563EB;
+        color: white;
+        border-color: #2563EB;
+    }
+
+    .features-table .category-header th:first-child {
+        background: #2563EB;
+        /* azul mais escuro */
+        color: #fff;
+        /* garante contraste */
+        font-weight: 600;
+    }
+
+    /**/
 }
 
 #toggleButton {

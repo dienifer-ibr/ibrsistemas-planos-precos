@@ -24,13 +24,13 @@ const FeatureSection = ({ title, subtitle, features }: FeatureSectionProps) => {
           {features.map((feature, index) => (
             <Card key={index} className="border-border hover:border-primary/50 transition-all duration-300 hover:shadow-md bg-background/50 backdrop-blur">
               <CardContent className="p-6 text-center">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg mb-4">
-                  <feature.icon className="w-6 h-6 text-primary" />
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/0 rounded-lg mb-4">
+                  <feature.icon className="w-10 h-10 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-xl lg:text-lg font-semibold text-foreground mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-lg lg:text-sm">
                   {feature.description}
                 </p>
               </CardContent>
