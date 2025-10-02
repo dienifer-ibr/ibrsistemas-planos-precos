@@ -776,10 +776,17 @@ body {
     }
 
     /*comparise section*/
+    /* Container ocupa largura total */
+    .container {
+        margin: 0;
+        padding: 0 10px;
+    }
+
+    /* Seção de comparação */
     .features-content {
         display: flex;
         flex-direction: column;
-        /* empilha tabela + sumário */
+        /* empilha tabela e menu */
         gap: 1rem;
     }
 
@@ -793,7 +800,7 @@ body {
 
     .features-table {
         min-width: 700px;
-        /* garante que caiba em scroll */
+        /* garante que os planos caibam em scroll */
         font-size: 0.8rem;
     }
 
@@ -805,16 +812,35 @@ body {
 
     .feature-name {
         max-width: 180px;
-        /* evita quebrar demais */
         font-size: 0.8rem;
     }
 
-    /* Navegação passa para baixo da tabela em horizontal */
+    /* Categoria em linha separada */
+    .features-table .category-header th:first-child {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: #2563EB;
+        /* azul mais escuro */
+        color: #fff;
+        font-weight: 600;
+        padding: 0.75rem;
+        border-radius: 6px 6px 0 0;
+    }
+
+    /* Demais títulos (nomes dos planos) mantêm estilo */
+    .features-table .category-header th:not(:first-child) {
+        text-align: center;
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    /* Navegação vira carrossel abaixo da tabela */
     .features-summary {
         position: static;
         order: 2;
         width: 100%;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
         max-height: 150px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -840,20 +866,13 @@ body {
         border: 1px solid #e5e7eb;
         border-radius: 8px;
         background: #f9fafb;
+        flex-shrink: 0;
     }
 
     .summary-link.active {
         background: #2563EB;
         color: white;
         border-color: #2563EB;
-    }
-
-    .features-table .category-header th:first-child {
-        background: #2563EB;
-        /* azul mais escuro */
-        color: #fff;
-        /* garante contraste */
-        font-weight: 600;
     }
 
     /**/
